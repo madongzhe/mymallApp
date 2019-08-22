@@ -22,7 +22,7 @@ class App extends Component {
     pages: [
       'pages/index/index',
       'pages/cate/index',
-      'pages/cart/index',
+      'pages/discounts/index',
       'pages/user/index',
     ],
     window: {
@@ -38,24 +38,24 @@ class App extends Component {
       borderStyle: 'black',
       list: [{
         pagePath: "pages/index/index",
-        // iconPath: "./assets/tab-bar/home.png",
-        // selectedIconPath: "./assets/tab-bar/home-active.png",
+        iconPath: "./assets/tab-bar/home.png",
+        selectedIconPath: "./assets/tab-bar/home_active.png",
         text: "首页"
       }, {
         pagePath: "pages/cate/index",
-        // iconPath: "./assets/tab-bar/cate.png",
-        // selectedIconPath: "./assets/tab-bar/cate-active.png",
+        iconPath: "./assets/tab-bar/cate.png",
+        selectedIconPath: "./assets/tab-bar/cate_active.png",
         text: "分类"
       }, {
-        pagePath: "pages/cart/index",
-        // iconPath: "./assets/tab-bar/cart.png",
-        // selectedIconPath: "./assets/tab-bar/cart-active.png",
-        text: "购物车"
+        pagePath: "pages/discounts/index",
+        iconPath: "./assets/tab-bar/discounts.png",
+        selectedIconPath: "./assets/tab-bar/discounts_active.png",
+        text: "优惠活动"
       }, {
         pagePath: "pages/user/index",
-        // iconPath: "./assets/tab-bar/user.png",
-        // selectedIconPath: "./assets/tab-bar/user-active.png",
-        text: "个人" 
+        iconPath: "./assets/tab-bar/user.png",
+        selectedIconPath: "./assets/tab-bar/user_active.png",
+        text: "个人中心" 
       }]
     }
   }

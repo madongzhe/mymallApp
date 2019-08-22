@@ -1,9 +1,22 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
+import Banner from './banner/banner';
 
-export default class Index extends Component {
-
+interface IAppState {
+  imageList?: any;
+}
+export default class Index extends Component<{},IAppState> {
+  constructor (props: any) {
+    super(props)
+    this.state = {
+      imageList: [
+        'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+        'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+        'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+        ]
+    }
+  }
   /**
    * 指定config的类型声明为: Taro.Config
    *
@@ -28,6 +41,7 @@ export default class Index extends Component {
   render () {
     return (
       <View className='index'>
+        <Banner data={this.state.imageList}></Banner> 
         <Text>Hello world!</Text>
       </View>
     )
