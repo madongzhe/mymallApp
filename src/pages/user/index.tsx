@@ -1,15 +1,15 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 
-export default class CartIndex extends Component {
+export default class UserIndex extends Component {
   config: Config = {
-    navigationBarTitleText: '购物车'
+    navigationBarTitleText: '个人中心'
   }
 
   render () {
     return (
       <View className='index'>
-        <Text>购物车</Text>
+        <Text>个人中心</Text>
       </View>
     )
   }

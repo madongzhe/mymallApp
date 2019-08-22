@@ -1,1 +1,0 @@
-import Taro, { Component, Config } from '@tarojs/taro'
