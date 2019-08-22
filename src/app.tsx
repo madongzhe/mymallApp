@@ -21,9 +21,9 @@ class App extends Component {
   config: Config = {
     pages: [
       'pages/index/index',
-      "pages/cate/index",
-      "pages/cart/index",
-      "pages/user/index",
+      'pages/cate/index',
+      'pages/cart/index',
+      'pages/user/index',
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -55,7 +55,7 @@ class App extends Component {
         pagePath: "pages/user/index",
         // iconPath: "./assets/tab-bar/user.png",
         // selectedIconPath: "./assets/tab-bar/user-active.png",
-        text: "个人"
+        text: "个人" 
       }]
     }
   }
