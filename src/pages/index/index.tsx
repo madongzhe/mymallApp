@@ -1,6 +1,7 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text, Image } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
+import { Loading } from '../../components'
 import * as actions from '../../actions/home'
 import './index.scss'
 import Banner from './banner/banner';
@@ -8,7 +9,8 @@ import searchIcon from './assets/search.png'
 import Box from './box';
 
 interface IAppProps {
-  dispatchHome?: any;
+  dispatchHome?: any,
+  homeInfo: any
 }
 interface IAppState {
   imageList?: any,
@@ -20,12 +22,8 @@ export default class Index extends Component<IAppProps,IAppState> {
   constructor (props: any) {
     super(props)
     this.state = {
-      imageList: [
-        'https://m.360buyimg.com/mobilecms/s700x280_jfs/t1/40562/22/12397/68593/5d5d0f35E1c2ba9ce/500a6636eb143396.jpg!cr_1125x549_0_72!q70.jpg.dpg',
-        'https://m.360buyimg.com/mobilecms/s700x280_jfs/t1/66806/36/7721/128049/5d5a9289Ef928d43a/20b8facda3fd787d.jpg!cr_1125x549_0_72!q70.jpg.dpg'
-        ],
       boxlist:[{icon:'',desc:'活动'}],
-      loaded:false
+      loaded:false,
     }
   }
   /**
@@ -41,7 +39,8 @@ export default class Index extends Component<IAppProps,IAppState> {
 
   componentWillMount () { 
     this.props.dispatchHome().then(() => {
-      this.setState({ loaded: true })
+      this.setState({ loaded: true},function(){
+      })
     })
   }
 
@@ -61,6 +60,11 @@ export default class Index extends Component<IAppProps,IAppState> {
     })
   }
   render () {
+    if (!this.state.loaded) {
+      return <Loading />
+    }
+    const { homeInfo } = this.props
+    console.log(this.props)
     return (
       <View className='index'>
         <View className='home_search'>
@@ -71,7 +75,7 @@ export default class Index extends Component<IAppProps,IAppState> {
             </Text>
           </View>
         </View>
-        <Banner data={this.state.imageList}></Banner>
+        <Banner data={homeInfo.banner}></Banner>
         <Box list={this.state.boxlist}></Box>
         <View>
           <View>1</View>
