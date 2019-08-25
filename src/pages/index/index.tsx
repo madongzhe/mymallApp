@@ -1,20 +1,31 @@
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { View, Text, Image } from '@tarojs/components'
+import { connect } from '@tarojs/redux'
+import * as actions from '../../actions/home'
 import './index.scss'
 import Banner from './banner/banner';
+import searchIcon from './assets/search.png'
+import Box from './box';
 
-interface IAppState {
-  imageList?: any;
+interface IAppProps {
+  dispatchHome?: any;
 }
-export default class Index extends Component<{},IAppState> {
+interface IAppState {
+  imageList?: any,
+  boxlist?:any,
+  loaded?:boolean
+}
+@connect(state => state.home, { ...actions })
+export default class Index extends Component<IAppProps,IAppState> {
   constructor (props: any) {
     super(props)
     this.state = {
       imageList: [
-        'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-        'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-        'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-        ]
+        'https://m.360buyimg.com/mobilecms/s700x280_jfs/t1/40562/22/12397/68593/5d5d0f35E1c2ba9ce/500a6636eb143396.jpg!cr_1125x549_0_72!q70.jpg.dpg',
+        'https://m.360buyimg.com/mobilecms/s700x280_jfs/t1/66806/36/7721/128049/5d5a9289Ef928d43a/20b8facda3fd787d.jpg!cr_1125x549_0_72!q70.jpg.dpg'
+        ],
+      boxlist:[{icon:'',desc:'活动'}],
+      loaded:false
     }
   }
   /**
@@ -28,7 +39,11 @@ export default class Index extends Component<{},IAppState> {
     navigationBarTitleText: '首页'
   }
 
-  componentWillMount () { }
+  componentWillMount () { 
+    this.props.dispatchHome().then(() => {
+      this.setState({ loaded: true })
+    })
+  }
 
   componentDidMount () { }
 
@@ -37,12 +52,33 @@ export default class Index extends Component<{},IAppState> {
   componentDidShow () { }
 
   componentDidHide () { }
-
+  
+  handlePrevent = () => {
+    // XXX 时间关系，首页只实现底部推荐商品的点击
+    Taro.showToast({
+      title: '目前只可点击底部推荐商品',
+      icon: 'none'
+    })
+  }
   render () {
     return (
       <View className='index'>
-        <Banner data={this.state.imageList}></Banner> 
-        <Text>Hello world!</Text>
+        <View className='home_search'>
+          <View className='home_search-wrap' onClick={this.handlePrevent}>
+            <Image className='home_search-img' src={searchIcon} />
+            <Text className='home_search-txt'>
+              搜索你要的商品
+            </Text>
+          </View>
+        </View>
+        <Banner data={this.state.imageList}></Banner>
+        <Box list={this.state.boxlist}></Box>
+        <View>
+          <View>1</View>
+          <View>2</View>
+          <View>3</View>
+          <View>4</View>
+        </View>
       </View>
     )
   }
