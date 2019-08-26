@@ -3,7 +3,7 @@ import { View, Text, Image } from '@tarojs/components'
 import './index.scss'
 
 interface IAppProps {
-    list?: any;
+    list: Array<any>;
 }
 export default class Policy extends Component<IAppProps> {
   static defaultProps = {
@@ -23,9 +23,9 @@ export default class Policy extends Component<IAppProps> {
           <View key={index} className='home-policy_item'>
             <Image
               className='home-policy_item-img'
-              src={item.icon}
+              src={item.img_url}
             />
-            <Text className='home-policy_item-txt'>{item.desc}</Text>
+            <Text className='home-policy_item-txt'>{item.title}</Text>
           </View>
         ))}
       </View>

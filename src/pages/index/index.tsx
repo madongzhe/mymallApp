@@ -76,13 +76,8 @@ export default class Index extends Component<IAppProps,IAppState> {
           </View>
         </View>
         <Banner data={homeInfo.banner}></Banner>
-        <Box list={this.state.boxlist}></Box>
-        <View>
-          <View>1</View>
-          <View>2</View>
-          <View>3</View>
-          <View>4</View>
-        </View>
+        <Box list={homeInfo.grid}></Box>
+        {}
       </View>
     )
   }
