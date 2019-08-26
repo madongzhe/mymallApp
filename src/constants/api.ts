@@ -2,7 +2,7 @@ export const host = HOST;
 
 // home
 export const API_HOME = `${host}/api/home`
-export const API_HOME_RECOMMEND = `${host}`
+export const API_HOME_RECOMMEND = `${host}/api/goodsList`
 
 // user
 export const API_USER = `${host}/xhr/user/getDetail.json`

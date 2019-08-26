@@ -20,8 +20,8 @@ import {
    * 推荐商品
    * @param {*} payload
    */
-  export const dispatchRecommend = payload => createAction({
-    url: API_HOME_RECOMMEND,
+  export const dispatchRecommend = (payload, page, size) => createAction({
+    url: API_HOME_RECOMMEND+'?page='+page +'&size='+size,
     type: HOME_RECOMMEND,
     payload
   })
