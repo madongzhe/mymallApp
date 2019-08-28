@@ -38,7 +38,7 @@ import {
       case HOME_RECOMMEND: {
         return {
           ...state,
-          recommend: state.recommend.concat(action.payload.rcmdItemList)
+          recommend: state.recommend.concat(action.payload)
         }
       }
       default:

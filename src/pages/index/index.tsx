@@ -1,16 +1,19 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text, Image } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
-import { Loading } from '../../components'
+import { Loading } from '@components'
 import * as actions from '../../actions/home'
 import './index.scss'
 import Banner from './banner/banner';
 import searchIcon from './assets/search.png'
 import Box from './box';
+import Recommend from './recommend';
 
 interface IAppProps {
   dispatchHome?: any,
-  homeInfo: any
+  dispatchRecommend?: any,
+  homeInfo: any,
+  recommend: Array<any>
 }
 interface IAppState {
   imageList?: any,
@@ -42,6 +45,15 @@ export default class Index extends Component<IAppProps,IAppState> {
       this.setState({ loaded: true},function(){
       })
     })
+    this.recommend(1);
+  }
+  // 推荐商品
+  recommend = (page) => {
+    let size = 10;
+    this.props.dispatchRecommend(page, size).then(() => {
+      this.setState({ loaded: true},function(){
+      })
+    })
   }
 
   componentDidMount () { }
@@ -63,7 +75,7 @@ export default class Index extends Component<IAppProps,IAppState> {
     if (!this.state.loaded) {
       return <Loading />
     }
-    const { homeInfo } = this.props
+    const { homeInfo, recommend } = this.props
     console.log(this.props)
     return (
       <View className='index'>
@@ -75,9 +87,10 @@ export default class Index extends Component<IAppProps,IAppState> {
             </Text>
           </View>
         </View>
-        <Banner data={homeInfo.banner}></Banner>
+        {homeInfo.banner?<Banner data={homeInfo.banner}></Banner>:''}
         <Box list={homeInfo.grid}></Box>
-        {}
+        
+        <Recommend list={recommend}/>
       </View>
     )
   }
