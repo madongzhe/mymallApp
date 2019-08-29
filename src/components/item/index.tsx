@@ -4,7 +4,8 @@ import { host_img } from '@constants/api'
 import './index.scss'
 
 interface IAppProps {
-    Item: any;
+    Item: any,
+    handleClick: any,
 }
 export default class Item extends Component<IAppProps> {
   static defaultProps = {
@@ -13,11 +14,13 @@ export default class Item extends Component<IAppProps> {
   render () {
     const { Item } = this.props;
     return (
-      <View className='goods_item'>
-        {Item.img?<Image src={ host_img + Item.img.split(',')[0]} className='goods_item_img' />:''}
-        <Text className="goods_item_title">{Item.title}</Text>
-        <View className='item_'>
-            <Text className="goods_item_price">￥{Item.prices}</Text>
+      <View className='goods_item' onClick={this.props.handleClick.bind(this,Item.id)}>
+        <View className='goods_item_m'>
+          {Item.img?<Image src={ host_img + Item.img.split(',')[0]} className='goods_item_img' />:''}
+          <Text className="goods_item_title">{Item.title}</Text>
+          <View className='item_'>
+              <Text className="goods_item_price">￥{Item.prices}</Text>
+          </View>
         </View>
       </View>
     )

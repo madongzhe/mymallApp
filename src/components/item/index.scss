@@ -1,8 +1,11 @@
 .goods_item{
-  display: flex;
-  flex-direction: column;
-  justify-content:center;
   width: 50%;
+  &_m{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    margin:5px;
+  }
   &_img{
     width: 330px;
     height: 330px;

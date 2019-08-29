@@ -13,7 +13,7 @@ export default class Recommend extends Component<IAppProps> {
     
     handleClick = (id) => {
         Taro.navigateTo({
-          url: `/pages/item/item?itemId=${id}`
+          url: `/pages/item/index?itemId=${id}`
         })
       }
       render () {
@@ -25,9 +25,9 @@ export default class Recommend extends Component<IAppProps> {
                 </View>
                 <View className='home-recommend__list'>
                 {list.length>0?list.map((item)=>{
-                    return <Item key={item.id} Item={item}/>
+                    return <Item key={item.id} handleClick={this.handleClick} Item={item}/>
                 }):<Loading />}
                 </View>
             </View>
-        )
+        )}
 }
