@@ -1,4 +1,4 @@
-import {
+  import {
     HOME_INFO, HOME_RECOMMEND
   } from '../constants/home'
   import {

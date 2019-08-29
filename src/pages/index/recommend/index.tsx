@@ -24,7 +24,7 @@ export default class Recommend extends Component<IAppProps> {
                     <Text className='home-recommend__title-txt'>为你推荐</Text>
                 </View>
                 <View className='home-recommend__list'>
-                {list?list.map((item)=>{
+                {list.length>0?list.map((item)=>{
                     return <Item key={item.id} Item={item}/>
                 }):<Loading />}
                 </View>

@@ -1,4 +1,5 @@
 export const host = HOST;
+export const host_img = HOST_IMG;
 
 // home
 export const API_HOME = `${host}/api/home`
