@@ -5,7 +5,17 @@ export default class ItemIndex extends Component {
   config: Config = {
     navigationBarTitleText: '详情'
   }
+  componentWillMount () {
 
+  }
+
+  componentDidMount () { }
+
+  componentWillUnmount () { }
+
+  componentDidShow () { }
+
+  componentDidHide () { }
   render () {
     return (
       <View className='index'>
