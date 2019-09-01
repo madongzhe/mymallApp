@@ -8,7 +8,7 @@ export const API_HOME_RECOMMEND = `${host}/api/goodsList`
 export const API_ITEM = `${host}/api/goodsItem`
 
 // cate
-export const API_CATE = `${host}/xhr/list/category.json`
+export const API_CATE = `${host}/api/list/category`
 export const API_CATE_SUB = `${host}/xhr/list/subCate.json`
 export const API_CATE_SUB_LIST = `${host}/xhr/list/l2Items2.json`
 
