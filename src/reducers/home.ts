@@ -17,24 +17,6 @@ import {
           homeInfo: action.payload
         }
       }
-      case HOME_SEARCH_COUNT: {
-        return {
-          ...state,
-          searchCount: action.payload.count
-        }
-      }
-      case HOME_PIN: {
-        // 每3个分成一组
-        let pin:Array<any> = []
-        action.payload.forEach((item, index) => {
-          const groupIndex = parseInt(index / 3 +'')
-          if (!pin[groupIndex]) {
-            pin[groupIndex] = []
-          }
-          pin[groupIndex].push(item)
-        })
-        return { ...state, pin }
-      }
       case HOME_RECOMMEND: {
         return {
           ...state,

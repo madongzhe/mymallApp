@@ -1,10 +1,6 @@
-  import {
-    HOME_INFO, HOME_RECOMMEND
-  } from '../constants/home'
-  import {
-    API_HOME,API_HOME_RECOMMEND
-  } from '../constants/api'
-  import { createAction } from '../utils/redux'
+  import {  HOME_INFO, HOME_RECOMMEND } from '../constants/home'
+  import { API_HOME,API_HOME_RECOMMEND } from '../constants/api'
+  import { createAction } from '@utils/redux'
   
   /**
    * 首页数据

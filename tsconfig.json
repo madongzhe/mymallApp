@@ -28,6 +28,7 @@
       "@components": ["src/components"],
       "@constants": ["src/constants"],
       "@actions": ["src/actions"],
+      "@styles": ["src/styles"],
     }
   },
   "exclude": [

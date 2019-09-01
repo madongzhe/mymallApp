@@ -17,8 +17,8 @@ interface IAppProps {
 }
 interface IAppState {
   imageList?: any,
-  boxlist?:any,
-  loaded?:boolean
+  boxlist?: any,
+  loaded?: boolean
 }
 @connect(state => state.home, { ...actions })
 export default class Index extends Component<IAppProps,IAppState> {
@@ -29,6 +29,9 @@ export default class Index extends Component<IAppProps,IAppState> {
       loaded:false,
     }
   }
+  config: Config = {
+    navigationBarTitleText: '首页'
+  }
   /**
    * 指定config的类型声明为: Taro.Config
    *
@@ -36,9 +39,6 @@ export default class Index extends Component<IAppProps,IAppState> {
    * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
-  config: Config = {
-    navigationBarTitleText: '首页'
-  }
 
   componentWillMount () { 
     this.props.dispatchHome().then(() => {
@@ -76,7 +76,6 @@ export default class Index extends Component<IAppProps,IAppState> {
       return <Loading />
     }
     const { homeInfo, recommend } = this.props
-    console.log(this.props)
     return (
       <View className='index'>
         <View className='home_search'>
@@ -89,7 +88,6 @@ export default class Index extends Component<IAppProps,IAppState> {
         </View>
         {homeInfo.banner?<Banner data={homeInfo.banner}></Banner>:''}
         <Box list={homeInfo.grid}></Box>
-        
         <Recommend list={recommend}/>
       </View>
     )
