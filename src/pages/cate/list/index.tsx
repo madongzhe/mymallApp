@@ -29,7 +29,7 @@ export default class List extends Component<IAppProps> {
               </View>
             }
             <View className='cate-list__wrap'>
-              {group.categoryList.map((item, index) => (
+              {group.categoryList?group.categoryList.map((item, index) => (
                 <View
                   key={item.id}
                   className={classNames('cate-list__item',
@@ -42,7 +42,7 @@ export default class List extends Component<IAppProps> {
                     <Text className='cate-list__item-txt'>{item.name}</Text>
                   </View>
                 </View>
-              ))}
+              )):''}
             </View>
           </View>
         ))}
