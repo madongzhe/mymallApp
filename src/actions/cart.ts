@@ -1,12 +1,12 @@
 import {
     CART_INFO, CART_NUM, CART_RECOMMEND,
     CART_ADD, CART_UPDATE, CART_UPDATE_CHECK
-  } from '@constants/cart'
+  } from '@/constants/cart'
   import {
     API_CART, API_CART_NUM, API_CART_RECOMMEND,
     API_CART_ADD, API_CART_UPDATE, API_CART_UPDATE_CHECK
-  } from '@constants/api'
-  import { createAction } from '@utils/redux'
+  } from '@/constants/api'
+  import { createAction } from '@/utils/redux'
   
   /**
    * 购物车信息

@@ -1,10 +1,10 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, ScrollView } from '@tarojs/components'
-import { Popup, Loading } from '@components'
+import { Popup, Loading } from '@/components'
 import { connect } from '@tarojs/redux'
-import * as actions from '@actions/item'
-import { dispatchAdd } from '@actions/cart'
-import { getWindowHeight } from '@utils/style'
+import * as actions from '@/actions/item'
+import { dispatchAdd } from '@/actions/cart'
+import { getWindowHeight } from '@/utils/style'
 import Gallery from './gallery'
 import InfoBase from './info-base'
 import InfoParam from './info-param'
@@ -103,7 +103,7 @@ class Item extends Component<IAppProps,IAppState> {
     const { itemInfo } = this.props
     const gallery = itemInfo.img?itemInfo.img.split(','):[]
     const height = getWindowHeight(false)
-    // XXX RN 的 transform 写法不同，这块可以统一放到 @utils/style 的 postcss() 中处理
+    // XXX RN 的 transform 写法不同，这块可以统一放到 @/utils/style 的 postcss() 中处理
     const popupStyle = process.env.TARO_ENV === 'rn' ?
       { transform: [{ translateY: Taro.pxTransform(-100) }] } :
       { transform: `translateY(${Taro.pxTransform(-100)})` }

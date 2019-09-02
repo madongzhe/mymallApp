@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { Loading, Item } from '@components'
+import { Loading, Item } from '@/components'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
 

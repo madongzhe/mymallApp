@@ -1,6 +1,6 @@
-import { CATE_MENU, CATE_SUB, CATE_SUB_LIST } from '@constants/cate'
-import { API_CATE, API_CATE_SUB, API_CATE_SUB_LIST } from '@constants/api'
-import { createAction } from '@utils/redux'
+import { CATE_MENU, CATE_SUB, CATE_SUB_LIST } from '@/constants/cate'
+import { API_CATE, API_CATE_SUB, API_CATE_SUB_LIST } from '@/constants/api'
+import { createAction } from '@/utils/redux'
 
 /**
  * 分类菜单、列表

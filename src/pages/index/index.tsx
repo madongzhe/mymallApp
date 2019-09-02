@@ -1,7 +1,7 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text, Image } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
-import { Loading } from '@components'
+import { Loading } from '@/components'
 import * as actions from '../../actions/home'
 import './index.scss'
 import Banner from './banner/banner';

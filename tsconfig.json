@@ -24,11 +24,7 @@
       "global.d.ts"
     ],
     "paths": {
-      "@utils": ["src/utils"],
-      "@components": ["src/components"],
-      "@constants": ["src/constants"],
-      "@actions": ["src/actions"],
-      "@styles": ["src/styles"],
+      "@/*": ["src/*"],
     }
   },
   "exclude": [
