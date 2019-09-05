@@ -29,7 +29,7 @@ export default class List extends Component<IAppProps> {
               </View>
             }
             <View className='cate-list__wrap'>
-              {group.categoryList?group.categoryList.map((item, index) => (
+              {group.categoryGroupList?group.categoryGroupList.map((item, index) => (
                 <View
                   key={item.id}
                   className={classNames('cate-list__item',
@@ -37,7 +37,7 @@ export default class List extends Component<IAppProps> {
                   )}
                   onClick={this.handleClick.bind(this, item)}
                 >
-                  <Image className='cate-list__item-img' src={item.bannerUrl} />
+                  <Image className='cate-list__item-img' src={item.image_url} />
                   <View className='cate-list__item-txt-wrap'>
                     <Text className='cate-list__item-txt'>{item.name}</Text>
                   </View>
