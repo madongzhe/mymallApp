@@ -28,6 +28,7 @@ class App extends Component {
       'pages/discounts/index',
       'pages/user/index',
       'pages/item/index',
+      'pages/cateSub/index',
     ],
     window: {
       backgroundTextStyle: 'light',

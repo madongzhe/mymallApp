@@ -9,8 +9,8 @@ export const API_ITEM = `${host}/api/goodsItem`
 
 // cate
 export const API_CATE = `${host}/api/category`
-export const API_CATE_SUB = `${host}/xhr/list/subCate.json`
-export const API_CATE_SUB_LIST = `${host}/xhr/list/l2Items2.json`
+export const API_CATE_SUB = `${host}/api/subCategory`
+export const API_CATE_SUB_LIST = `${host}/api/subGoodsList`
 
 // cart
 export const API_CART = `${host}/xhr/promotionCart/getCarts.json`
