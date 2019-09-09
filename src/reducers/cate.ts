@@ -17,7 +17,7 @@ export default function cate(state = INITIAL_STATE, action) {
     case CATE_SUB: {
       return {
         ...state,
-        subMenu: action.payload.category.subCategoryList
+        subMenu: action.payload
       }
     }
     case CATE_SUB_LIST: {

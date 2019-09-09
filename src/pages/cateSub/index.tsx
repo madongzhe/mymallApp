@@ -42,7 +42,7 @@ class CateSub extends Component<IAppProps, IAppState> {
     this.props.dispatchSubMenu(payload).then((res) => {
       this.setState({ loaded: true })
 
-      const { category: { name, subCategoryList } } = res
+      const subCategoryList = res.data;
       Taro.setNavigationBarTitle({ title: name })
       setTimeout(() => {
         const index = subCategoryList.findIndex(item => item.id === this.parentid)
@@ -76,8 +76,8 @@ class CateSub extends Component<IAppProps, IAppState> {
 
     this.setState({ loading: { ...loading, [id]: true } })
     this.props.dispatchSubList({
-      categoryL1Id: this.categoryId,
-      categoryL2Id: id
+      parentid: this.categoryId,
+      categoryid: id
     })
   }
 
