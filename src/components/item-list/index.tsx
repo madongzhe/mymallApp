@@ -20,34 +20,35 @@ export default class ItemList extends Component<IAppProps> {
     const { list } = this.props
     return (
       <View className='comp-item-list'>
-        <View className='comp-item-list__title'>
+        <View className='comp-item-list_title'>
           {this.props.children}
         </View>
-        <View className='comp-item-list__wrap'>
+        <View className='comp-item-list_wrap'>
           {list.map(item => (
             <View
               key={item.id}
-              className='comp-item-list__item'
+              className='comp-item-list_item'
               onClick={this.handleClick.bind(this, item)}
             >
-              <Image className='comp-item-list__item-img' src={item.listPicUrl} />
-              <View className='comp-item-list__item-info'>
+              <Image className='comp-item-list_item-img' src={item.img.split(',')[0]} />
+              <View className='comp-item-list_item-info'>
                 {/* {!!item.limitedTag &&
                   <Tag text={item.limitedTag} />
                 } */}
-                {/* <Text className='comp-item-list__item-name' numberOfLines={1}>
+                {/* <Text className='comp-item-list_item-name' numberOfLines={1}>
                   {item.name}
                 </Text> */}
 
-                <View className='comp-item-list__item-price-wrap'>
-                  <Text className='comp-item-list__item-price'>
-                    ¥{item.activityPrice || item.retailPrice}
+                <View className='comp-item-list_item-price-wrap'>
+                  <Text className='comp-item-list_item-price'>
+                    ¥{item.activity_price || item.retail_price}
                   </Text>
-                  {!!item.activityPrice &&
-                    <Text className='comp-item-list__item-price--origin'>
-                      ¥{item.retailPrice}
+                  {!!item.activity_price &&
+                    <Text className='comp-item-list_item-price--origin'>
+                      ¥{item.retail_price}
                     </Text>
                   }
+                  <Text className='comp-item-list_item-distance'>100m</Text>
                 </View>
               </View>
             </View>

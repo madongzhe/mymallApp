@@ -42,7 +42,6 @@ class Cate extends Component<IAppProps> {
   }
 
   render () {
-    console.log(this.props)
     const { menu, category } = this.props
     const { current, loading } = this.state
     const currentCategory = category.find(item => item.id === current) || {}

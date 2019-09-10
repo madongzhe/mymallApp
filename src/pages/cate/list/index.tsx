@@ -12,7 +12,6 @@ export default class List extends Component<IAppProps> {
   }
 
   handleClick = (item) => {
-    console.log(item)
     Taro.navigateTo({
       url: `/pages/cateSub/index?parentid=${item.parentId}&categoryId=${item.id}`
     })
@@ -36,7 +35,7 @@ export default class List extends Component<IAppProps> {
                   className={classNames('cate-list__item',
                     { 'cate-list__item--right': (index + 1) % 3 === 0 }
                   )}
-                  onClick={this.handleClick.bind(this, group)}
+                  onClick={this.handleClick.bind(this, item)}
                 >
                   <Image className='cate-list__item-img' src={item.image_url} />
                   <View className='cate-list__item-txt-wrap'>

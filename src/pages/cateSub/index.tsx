@@ -76,8 +76,7 @@ class CateSub extends Component<IAppProps, IAppState> {
 
     this.setState({ loading: { ...loading, [id]: true } })
     this.props.dispatchSubList({
-      parentid: this.categoryId,
-      categoryid: id
+      subId: id
     })
   }
 
@@ -107,7 +106,7 @@ class CateSub extends Component<IAppProps, IAppState> {
           style={{ height }}
         >
           {subMenu.map(item => {
-            const list = subCategory[item.id] || []
+            const list = subCategory[item.id] || [];
             return (
               <SwiperItem key={item.id} className='cate-sub__swiper-item'>
                 {!!list.length &&

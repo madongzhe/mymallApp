@@ -5,7 +5,7 @@
   background: #ffffff;
 }
 
-.comp-item-list__title {
+.comp-item-list_title {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,18 +13,17 @@
   height: 100px;
 }
 
-.comp-item-list__wrap {
+.comp-item-list_wrap {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding: 0 15px;
 }
 
-.comp-item-list__item {
+.comp-item-list_item {
   display: flex;
   flex-direction: column;
   padding: 0 15px 48px;
-  width: 50%;
 
   &-img {
     width: 330px;
@@ -56,6 +55,7 @@
     color: $black;
     font-size: 32px;
     line-height: 48px;
+    flex:3;
   }
 
   &-price--origin {
@@ -66,5 +66,11 @@
     line-height: 48px;
     text-decoration: line-through;
     text-decoration-color: $text-color-lighter;
+  }
+
+  &-distance{
+    font-size: 24px;
+    color: #ccc;
+    flex:1;
   }
 }

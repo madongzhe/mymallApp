@@ -29,6 +29,6 @@ export const dispatchSubMenu = payload => createAction({
 export const dispatchSubList = payload => createAction({
   url: API_CATE_SUB_LIST,
   type: CATE_SUB_LIST,
-  cb: res => ({ ...res, id: payload.categoryL2Id }),
+  cb: res => ({ ...res, id: payload.subId }),
   payload
 })
