@@ -12,7 +12,7 @@ export default class ItemList extends Component<IAppProps> {
 
   handleClick = (item) => {
     Taro.navigateTo({
-      url: `/pages/item/item?itemId=${item.id}`
+      url: `/pages/item/index?itemId=${item.id}`
     })
   }
 
@@ -35,9 +35,9 @@ export default class ItemList extends Component<IAppProps> {
                 {/* {!!item.limitedTag &&
                   <Tag text={item.limitedTag} />
                 } */}
-                {/* <Text className='comp-item-list_item-name' numberOfLines={1}>
-                  {item.name}
-                </Text> */}
+                <Text className='comp-item-list_item-name' numberOfLines={1}>
+                  {item.title}
+                </Text>
 
                 <View className='comp-item-list_item-price-wrap'>
                   <Text className='comp-item-list_item-price'>
