@@ -20,7 +20,7 @@ export default class Recommend extends Component<IAppProps> {
             </View>
             <View className='home-recommend__list'>
             {list.length>0?list.map((item)=>{
-                return <Item key={item.id} Item={item}/>
+                return <Item key={item.goods_id} Item={item}/>
             }):<Loading />}
             </View>
         </View>

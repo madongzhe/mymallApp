@@ -17,12 +17,12 @@ export default class Item extends Component<IAppProps> {
   render () {
     const { Item } = this.props;
     return (
-      <View className='goods_item' onClick={this.handleClick.bind(this,Item.id)}>
+      <View className='goods_item' onClick={this.handleClick.bind(this,Item.goods_id)}>
         <View className='goods_item_m'>
-          {Item.img?<Image src={ Item.img.split(',')[0]} className='goods_item_img' />:''}
-          <Text className="goods_item_title">{Item.title}</Text>
+          {Item.goods_image?<Image src={Item.goods_image.split(',')[0]} className='goods_item_img' />:''}
+          <Text className='goods_item_title'>{Item.goods_name}</Text>
           <View className=''>
-              <Text className="goods_item_price">￥{Item.prices}</Text>
+              <Text className='goods_item_price'>￥{Item.prices}</Text>
           </View>
         </View>
       </View>
