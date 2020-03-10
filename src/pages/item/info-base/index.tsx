@@ -19,8 +19,8 @@ export default class InfoBase extends Component<IAppProps> {
       <View className='item-info-base'>
         <View className='item-info-base__header'>
           <View className='item-info-base__header-wrap'>
-            <Text className='item-info-base__header-name'>{data.title}</Text>
-            <Text className='item-info-base__header-desc'>{data.sub_title}</Text>
+            <Text className='item-info-base__header-name'>{data.goods_name}</Text>
+            <Text className='item-info-base__header-desc'>{data.goods_advword}</Text>
           </View>
           <View className='item-info-base__header-star'>
             <Text className='item-info-base__header-star-txt'>

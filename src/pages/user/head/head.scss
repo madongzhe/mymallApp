@@ -1,0 +1,11 @@
+.head-user{
+  height: 7.5rem;
+  line-height: 7.5rem;
+  background-color: #f66;
+  padding: .625rem;
+  &_avatar{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: .625rem;
+  }
+}

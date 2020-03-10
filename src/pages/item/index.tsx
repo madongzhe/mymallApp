@@ -101,7 +101,7 @@ class Item extends Component<IAppProps,IAppState> {
 
   render () {
     const { itemInfo } = this.props
-    const gallery = itemInfo.img?itemInfo.img.split(','):[]
+    const gallery = itemInfo.goods_image?itemInfo.goods_image.split(','):[]
     const height = getWindowHeight(false)
     // XXX RN 的 transform 写法不同，这块可以统一放到 @/utils/style 的 postcss() 中处理
     const popupStyle = process.env.TARO_ENV === 'rn' ?

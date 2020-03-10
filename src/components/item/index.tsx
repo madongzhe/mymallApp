@@ -22,7 +22,7 @@ export default class Item extends Component<IAppProps> {
           {Item.goods_image?<Image src={Item.goods_image.split(',')[0]} className='goods_item_img' />:''}
           <Text className='goods_item_title'>{Item.goods_name}</Text>
           <View className=''>
-              <Text className='goods_item_price'>￥{Item.prices}</Text>
+              <Text className='goods_item_price'>￥{Item.activity_price}</Text>
           </View>
         </View>
       </View>

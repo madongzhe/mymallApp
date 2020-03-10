@@ -53,6 +53,7 @@
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "taro-ui": "^2.3.0",
     "tslib": "^1.8.0"
   },
   "devDependencies": {
